@@ -1,0 +1,122 @@
+.Agreement {
+  width: 100%;
+  height: 51vh;
+}
+
+.Agreement .agreement-content {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.Agreement .agreement-content a {
+  background-color: #db511f;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+.Agreement .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.Agreement .container ul,
+.Agreement .container ol {
+  margin-bottom: 1.5rem;
+}
+
+.Agreement .container ul li,
+.Agreement .container ol li {
+  margin-left: 1em;
+}
+
+.Agreement .agreement-content h2 {
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-size: 16px;
+}
+
+.Agreement .agreement-content h2 span {
+  font-weight: normal;
+}
+
+.Agreement .agreement-content p {
+  margin-bottom: 1.3rem;
+  font-size: 14px;
+  line-height: 24px;
+}
+/* .Agreement .close{
+	color: black;
+} */
+.Agreement .close button {
+  background-color: transparent;
+  border: none;
+  position: fixed;
+  right: 55px;
+  top: 55px;
+}
+.Agreement .input-checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* margin-right: 0.5em; */
+}
+.Agreement input {
+  margin-right: 1em;
+}
+
+.Agreement .alignButton {
+  display: flex;
+  justify-content: center;
+}
+
+.Agreement .alignButton button {
+  border: none;
+  background-color: #db511f;
+  color: white;
+  height: 40px;
+  width: 200px;
+  margin: 0.5rem auto;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.Agreement .alignButton button:disabled {
+  background: rgba(219, 81, 31, 0.47);
+}
+.ModalAgreement {
+  background-color: white;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  border-radius: 10px;
+
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.OverlayAgreement {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 40%);
+}

@@ -1,0 +1,18 @@
+.Pagination .pagination-container {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.Pagination .pagination-container span {
+  margin-right: 0.5rem;
+}
+
+.Pagination .pagination-container img {
+  width: 65%;
+}
+
+.Pagination .current {
+	padding: 0 0.3rem;
+	background: #4789ad;
+  }
+  

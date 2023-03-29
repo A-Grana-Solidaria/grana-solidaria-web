@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.DreamsPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DreamsPage .dreams-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 60%;
+  align-items: center;
+}
+
+.DreamsPage .pagination {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.DreamsPage .pagination span {
+  margin-right: 0.5rem;
+}
+
+.DreamsPage .pagination img {
+  width: 65%;
+}
+
+.ModalMenu {
+  background-color: #234355;
+  position: absolute;
+  top: 0;
+  left: 150px;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px 0px 0px 10px;
+  max-height: 100vh;
+}
+
+.ModalMenu .close button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  color: white;
+}
+
+.OverlayPrimeiraVez {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 40%);
+}

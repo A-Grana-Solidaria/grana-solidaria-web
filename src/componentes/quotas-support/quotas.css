@@ -1,0 +1,25 @@
+.Quotas {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 1.3rem auto 0.2rem auto;
+}
+
+.Quotas .quota {
+  background: #4789ad;
+  width: 100%;
+  height: 20px;
+  margin-right: 2%;
+}
+
+.Quotas .dark-blue {
+  background: #234355 !important;
+}
+
+.Quotas .quota:first-child {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.Quotas .quota:last-child {
+  border-radius: 0px 5px 5px 0px;
+}

@@ -1,0 +1,41 @@
+.Menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  height: 100%;
+}
+
+.Menu .menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 6rem 0 2rem 0;
+}
+
+.Menu .menu-container .top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Menu .menu-container .top img {
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  width: 4.5em;
+  height: 4.5em;
+  object-fit: cover;
+}
+
+.Menu .menu-container a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.Menu .menu-container .logout {
+  font-weight: 600;
+}

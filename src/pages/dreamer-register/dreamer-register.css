@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.DreamerRegister {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DreamerRegister .register-content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 1.3rem;
+  text-align: left;
+}
+
+.DreamerRegister .intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.DreamerRegister .part {
+  margin-top: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.DreamerRegister .part h3 {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+}
+
+.DreamerRegister .part h2 {
+  font-size: 24px;
+  line-height: 27px;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+}
+
+.DreamerRegister .photo {
+  margin-top: 1.3rem;
+  margin-bottom: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DreamerRegister::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #7e7e7e;
+  opacity: 1; /* Firefox */
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.DreamerRegister:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #7e7e7e;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.DreamerRegister::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #7e7e7e;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.DreamerRegister label {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+}
+
+.DreamerRegister input {
+  border: none;
+  border-bottom: 1px solid #a3a3a3;
+  padding: 0.7rem;
+  padding-left: 0;
+  margin-bottom: 1.2rem;
+  width: 100%;
+}
+
+.DreamerRegister .error {
+  border-bottom: 1px solid red;
+}
+
+.DreamerRegister .error::placeholder {
+  color: red;
+}
+
+.DreamerRegister .error:-ms-input-placeholder {
+  color: red;
+}
+
+.DreamerRegister .error::-ms-input-placeholder {
+  color: red;
+}
+
+.DreamerRegister button {
+  border: none;
+  background-color: #db511f;
+  color: white;
+  height: 40px;
+  width: 120px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.DreamerRegister .submit {
+  width: 280px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.DreamerRegister hr {
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  width: 100%;
+  border-bottom: none;
+  border-top: 1px solid #c6c6c6;
+}
+.DreamerRegister .alignButton {
+  display: flex;
+  justify-content: center;
+}
+
+.DreamerRegister .input-feedback {
+  color: red;
+  margin-bottom: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.DreamerRegister h2 input[type="file"] {
+  display: none;
+}
+
+.imgRound {
+  border-radius: 50%;
+  width: 4.5em;
+  height: 4.5em;
+  object-fit: cover;
+}
+
+.changePhotoLabel {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+}

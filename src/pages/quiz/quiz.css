@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Quiz .quiz-content {
+  width: 80%;
+  margin-top: 1rem;
+}
+
+.Quiz .quiz-content h2 {
+  margin-bottom: 2.5rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.Quiz .quiz-content h3 {
+  margin-top: 1rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.Quiz .question {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-bottom: 1px solid black;
+  margin-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.Quiz .question span {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.Quiz label {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.Quiz .question .answer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.Quiz .question .answer input {
+  margin-right: 0.4rem;
+}
+
+.Quiz textarea {
+  height: 200px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.Quiz p {
+  margin-bottom: 0.5rem;
+}
+
+.Quiz button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+  background: #db511f;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  color: white;
+  border: none;
+  width: 80%;
+  height: 35px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.Quiz button:disabled {
+  background: rgba(219, 81, 31, 0.47);
+}
+
+.Quiz .disclaimer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.Quiz .disclaimer span {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.Quiz .agreement input {
+  width: auto;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+.Quiz .agreement a {
+  text-decoration: none;
+  color: #db511f;
+  font-weight: bold;
+}
+
+.Quiz .question p {
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.Quiz input[type="text"] {
+  border: none;
+}
+
+.Quiz input[type="radio"] {
+  border-radius: 50%;
+}
+
+.Quiz span {
+  font-weight: bold;
+}
+
+.Quiz hr {
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  width: 100%;
+  border-bottom: none;
+  border-top: 1px solid #c6c6c6;
+}
+
+.Quiz .input-feedback {
+	color: red;
+	margin-bottom: 1rem;
+	font-style: italic;
+	font-weight: 300;
+	font-size: 13px;
+	line-height: 24px;
+  }

@@ -1,0 +1,29 @@
+.Wpp .whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: #00ba77;
+  color: white;
+  border-radius: 40px;
+  width: 210px;
+  height: 46px;
+  text-decoration:none;
+}
+
+.Wpp .whatsapp .wpp-content {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 12px;
+  justify-content: center;
+}
+
+.Wpp .whatsapp span {
+  line-height: 15px;
+}
+
+.Wpp .whatsapp img {
+  margin-bottom: 0;
+  margin-right: 0.5rem;
+}

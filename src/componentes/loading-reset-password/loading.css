@@ -1,0 +1,26 @@
+.Loading {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 1.5rem;
+  color: white;
+}
+
+.Loading h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.Loading span {
+  padding: 0 0.8rem;
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+}
+
+.Loading div {
+  text-align: center;
+  padding-top: 1rem;
+}

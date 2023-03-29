@@ -1,0 +1,72 @@
+.Affirmations {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin-top: 0.8rem;
+  color: white;
+  font-size: 14px;
+}
+
+.Affirmations span {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.Affirmations .affirmation {
+  border-bottom: 1px solid white;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.Affirmations .affirmation:last-of-type {
+  border-bottom: none;
+}
+
+.Affirmations p {
+  margin-bottom: 0.8rem;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.Affirmations .input-checkbox {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Affirmations input {
+  margin-right: 0.5rem;
+  border: 2px solid white;
+  background: transparent;
+}
+
+/* .Affirmations input[type="checkbox"] {
+  appearance: none;
+  outline: 0;
+  width: 16px;
+  height: 16px;
+} */
+
+.Affirmations button {
+  background: #db511f;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  color: white;
+  border: none;
+  margin: 0 auto;
+  width: 100%;
+  height: 36px;
+}
+
+.Affirmations button:disabled {
+  background: rgba(219, 81, 31, 0.47);
+}
+
+.Affirmations .close button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}

@@ -1,0 +1,61 @@
+.Terms {
+	width: 100%;
+	height: 51vh;
+  }
+  
+  .Terms .terms-content {
+	width: 80%;
+	margin: 0 auto;
+	text-align: left;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	text-align: justify;
+  }
+  
+  /* .Terms .terms-content a {
+	background-color: #db511f;
+	width: 200px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin: 0 auto;
+	text-decoration: none;
+	color: white;
+	border-radius: 5px;
+	margin-top: 2rem;
+  } */
+  
+  .Terms .container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+  }
+  
+  .Terms .container ul,
+  .Terms .container ol {
+	padding-left: 1.2rem;
+	margin-bottom: 1.5rem;
+  }
+  
+  .Terms .container ol li {
+	  list-style-type: lower-roman;
+  }
+  
+  .Terms .terms-content h2 {
+	text-transform: uppercase;
+	margin-bottom: 1.5rem;
+	font-size: 16px;
+  }
+  
+  .Terms .terms-content h2 span {
+	font-weight: normal;
+  }
+  
+  .Terms .terms-content p {
+	margin-bottom: 1.3rem;
+	font-size: 14px;
+	line-height: 24px;
+  }
+  

@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.SupporterRegister .agreement {
+  text-align: center;
+  font-size: 12px;
+  line-height: 24px;
+}
+.SupporterRegister .agreement input {
+  width: auto;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+.SupporterRegister .agreement a {
+  text-decoration: none;
+  color: #db511f;
+  font-weight: bold;
+}
+
+.SupporterRegister {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.SupporterRegister .intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+
+  line-height: 24px;
+}
+
+.SupporterRegister .register-content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 1.3rem;
+  text-align: left;
+}
+
+.SupporterRegister .alignButton {
+  display: flex;
+  justify-content: center;
+}
+
+.SupporterRegister .slider {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.SupporterRegister .slider input {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.SupporterRegister .slider span {
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+  color: #7e7e7e;
+}
+
+.SupporterRegister .slider-range {
+  color: black;
+}
+
+input[type="range"] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Special styling for WebKit/Blink */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #2a6687;
+  cursor: pointer;
+  margin-top: -5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #2a6687;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type="range"]::-ms-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #2a6687;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: #4789ad;
+  border-radius: 10px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: #4789ad;
+  border-radius: 10px;
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type="range"]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type="range"]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type="range"]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+
+.SupporterRegister .photo {
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SupporterRegister label {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+}
+
+.SupporterRegister .question {
+  font-weight: bold;
+  display: block;
+}
+
+.SupporterRegister .buttons label {
+  display: inline;
+}
+
+.SupporterRegister::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #7e7e7e;
+  opacity: 1; /* Firefox */
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.SupporterRegister:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #7e7e7e;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.SupporterRegister::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #7e7e7e;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.SupporterRegister input {
+  border: none;
+  border-bottom: 1px solid #a3a3a3;
+  padding: 0.7rem;
+  padding-left: 0;
+  margin-bottom: 1.2rem;
+  width: 100%;
+}
+
+.SupporterRegister .error {
+  border-bottom: 1px solid red;
+}
+
+.SupporterRegister .error::placeholder {
+  color: red;
+}
+
+.SupporterRegister .error:-ms-input-placeholder {
+  color: red;
+}
+
+.SupporterRegister .error::-ms-input-placeholder {
+  color: red;
+}
+
+.SupporterRegister .buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.SupporterRegister .buttons input {
+  margin: 0;
+  width: 30px;
+}
+
+.SupporterRegister .buttons label {
+  font-weight: normal;
+}
+
+.SupporterRegister button {
+  border: none;
+  background-color: #db511f;
+  color: white;
+  height: 40px;
+  width: 120px;
+  margin-right: 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.SupporterRegister .submit {
+  width: 280px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.SupporterRegister .submit:disabled {
+  background: rgba(219, 81, 31, 0.47);
+}
+
+.SupporterRegister .whatsapp {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.SupporterRegister .whatsapp img {
+  object-fit: contain;
+  margin-right: 0.5rem;
+}
+
+.SupporterRegister hr {
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  width: 100%;
+  border-bottom: none;
+  border-top: 1px solid #c6c6c6;
+}
+
+.SupporterRegister .footer-container {
+  margin-top: 1.5rem;
+}
+
+.SupporterRegister footer .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.SupporterRegister footer .logo img {
+  margin-right: 1rem;
+}
+
+.SupporterRegister .input-feedback {
+  color: red;
+  margin-bottom: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.SupporterRegister h2 input[type="file"] {
+  display: none;
+}
+
+.imgRound {
+	border-radius: 50%;
+	width: 4.5em;
+	height: 4.5em;
+  }
+
+  .changePhotoLabel {
+	margin: 10px;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 24px;
+	display: block;
+  }
