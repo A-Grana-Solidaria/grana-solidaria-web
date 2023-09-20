@@ -101,7 +101,7 @@ export default function Login() {
                 >
                   Esqueci minha senha
                 </a>
-                <button type="submit" className="submit">
+                <button type="submit" className="submit" style={{backgroundColor: "#FFB152", color: "white"}}>
                   Login
                 </button>
               </form>
@@ -113,22 +113,22 @@ export default function Login() {
           <div className="hr"></div>Não possuo uma conta
           <div className="hr"></div>
         </span>
-        <span>Eu sou um:</span>
-        <div className="buttons">
+        <span></span>
+        <div className="submit" style={{display: "flex"}}>
           <button
             onClick={() => {
               history.push(`${process.env.PUBLIC_URL}/registro-sonhador`);
             }}
           >
-            Sonhador
+            Faça seu cadastro
           </button>
-          <button
+          {/* <button
             onClick={() => {
               history.push(`${process.env.PUBLIC_URL}/registro-apoiador`);
             }}
           >
             Apoiador
-          </button>
+          </button> */}
         </div>
       </div>
       <hr></hr>

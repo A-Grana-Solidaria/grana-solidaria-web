@@ -1,10 +1,12 @@
-import "./dreamer-register.css";
+import "./cnpj-entrepreneur-register.css";
 import React from "react";
 import InputMask from "react-input-mask";
 import Header from "../../componentes/header/header";
 import Footer from "../../componentes/footer/footer";
 import Whatsapp from "../../componentes/whatsapp/whatsapp";
 import Photo from "../../assets/registro-photo.png";
+import StatesDropdown from '../../componentes/brazilian-states-dropdown/brazilian-states-dropdown';
+import CitiesDropdown from '../../componentes/brazilian-cities-dropdown/brazilian-cities-dropdown';
 
 import API from "../../utils/fetch";
 import { Formik } from "formik";
@@ -15,100 +17,119 @@ import {
   isValidCEP,
   isValidEmail,
   isValidMobilePhone,
+  isValidCNPJ,
+  getCities,
+  getStates
 } from "@brazilian-utils/brazilian-utils";
 import moment from "moment";
 import {useEffect} from 'react';
 
-export default function DreamerRegister() {
+export default function CnpjEntrepreneurRegister() {
   
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
   
   const history = useHistory();
-  const [cpfError, setCpfError] = React.useState("");
-  const [cepError, setCepError] = React.useState("");
+  const [cpfManagingPartnerError, setcpfManagingPartnerError] = React.useState("");
+  const [cnpjError, setCnpjError] = React.useState("");
+  const [companyCepError, setCompanyCepError] = React.useState("");
   const [phoneError, setPhoneError] = React.useState("");
   const [photosrc, setphotosrc] = React.useState("");
-  const [emailError, setEmailError] = React.useState("");
+  const [managingPartnerEmailError, setManagingPartnerEmailError] = React.useState("");
   const [dateError, setDateError] = React.useState("");
+  const shortenedStatesNamesList = getStates().map((state) => state.code);
+  const [selectedOption, setSelectedOption] = React.useState('');
+  const handleOptionSelect = (selectedValue) => {
+    setSelectedOption(selectedValue);
+  };
+
 
   return (
-    <div className="DreamerRegister">
+    <div className="CnpjEntrepreneurRegister">
       <Header h1="Grana Solidária" h2="Quero me cadastrar na" arrow="true" menu="false" />
-
       <div className="register-content">
         <div className="intro">
-          <span>Obrigado pelo seu interesse na Grana Solidária.</span>
-          <span>O cadastro é bem rapidinho ;) </span>
+          <h4>Obrigado pelo seu interesse na Grana Solidária.</h4>
+          <h4>O cadastro é bem rapidinho </h4>
         </div>
         <div className="part">
           <h3>Parte 1 de 2</h3>
-          <h2>Informações</h2>
+          <h2>Informações da sua empresa</h2>
+          <h4>Todas as informações referentes a pessoa física são do sócio administrador</h4>
         </div>
         <Formik
           initialValues={{
-            name: "",
-            birthdate: "",
-            phoneNumber: "",
-            cep: "",
-            cpf: "",
-            email: "",
+            razaosocial: "",
+            nomefantasia: "",
+            birthdateManagingPartner: "",
+            phoneNumberManagingPartner: "",
+            companyCep: "",
+            cpfManagingPartner: "",
+            cpnj: "",
+            state: "",
+            city: "",
+            managingPartnerEmail: "",
             password: "",
             changepassword: "",
           }}
           onSubmit={async (formValues) => {
             let formData = new FormData();
-            formData.append("name", formValues.name);
+            formData.append("razaosocial", formValues.razaosocial);
+            formData.append("nomefantasia", formValues.nomefantasia);
+            formData.append("state", formValues.state);
+            formData.append("city", formValues.city);
             formData.append(
-              "birthdate",
-              moment(formValues.birthdate, 'DD/MM/YYYY').format('MM-DD-YYYY')
+              "birthdatemanagingpartner",
+              moment(formValues.birthdateManagingPartner, "DD/MM/YYYY").format("MM-DD-YYYY")
             );
-            formData.append("phonenumber", formValues.phoneNumber);
-            formData.append("cep", formValues.cep);
-            formData.append("cpf", formValues.cpf);
-            formData.append("email", formValues.email);
+            formData.append("phonenumbermanagingpartner", formValues.phoneNumberManagingPartner);
+            formData.append("companycep", formValues.companyCep);
+            formData.append("cpfmanagingpartner", formValues.cpfManagingPartner);
+            formData.append("cnpj", formValues.cnpj);
+            formData.append("managingpartneremail", formValues.managingPartnerEmail);
             formData.append("password", formValues.password);
             formData.append("picture", formValues.picture);
 
             try {
+              //const response = await API.dreamer(formData);
               console.log(formData);
-              //const response1 = await API.dreamerGet();
-              //console.log( response1.toString());
-              const response = await API.dreamer(formData);
               
+              //const data = response.data;
 
-              const data = response.data;
-
-              setCepError("");
-              setCpfError("");
+              setCompanyCepError("");
+              setcpfManagingPartnerError("");
+              setCnpjError("");
               setPhoneError("");
               setDateError("");
-              setEmailError("");
-              API.updateAuthorization(data.dados.token);
+              setManagingPartnerEmailError("");
+              //API.updateAuthorization(data.dados.token);
               history.push(`${process.env.PUBLIC_URL}/questionario`);
             } catch (error) {
               if (!isValidCPF(formValues.cpf)) {
-                setCpfError("CPF Inválido");
+                setcpfManagingPartnerError("CPF Inválido");
+              }
+              if (!isValidCNPJ(formValues.cnpj)) {
+                setCnpjError("CNPJ Inválido");
               }
 
               if (!isValidCEP(formValues.cep)) {
-                setCepError("CEP inválido");
+                setCompanyCepError("CEP inválido");
               }
-              if (!moment(formValues.birthdate, "DD/MM/YYYY").isValid()) {
+              if (!moment(formValues.birthdateManagingPartner, "DD/MM/YYYY").isValid()) {
                 setDateError("Data inválida");
               } else if (
-                Date.parse(moment(formValues.birthdate, "DD/MM/YYYY")._d) >
+                Date.parse(moment(formValues.birthdateManagingPartner, "DD/MM/YYYY")._d) >
                 new Date().setFullYear(new Date().getFullYear() - 18)
               ) {
                 setDateError("Menor de idade");
               }
 
-              if (!isValidMobilePhone(formValues.phoneNumber)) {
+              if (!isValidMobilePhone(formValues.phoneNumberManagingPartner)) {
                 setPhoneError("Telefone inválido");
               }
               if (!isValidEmail(formValues.email)) {
-                setEmailError("Email inválido");
+                setManagingPartnerEmailError("Email inválido");
               }
               if (
                 error.response.data.dados.mensagem ===
@@ -119,14 +140,18 @@ export default function DreamerRegister() {
             }
           }}
           validationSchema={Yup.object().shape({
-            name: Yup.string().required("Campo requerido"),
-            birthdate: Yup.string().required("Campo requerido"),
-            phoneNumber: Yup.string()
+            razaosocial: Yup.string().required("Campo requerido"),
+            nomefantasia: Yup.string().required("Campo requerido"),
+            birthdateManagingPartner: Yup.string().required("Campo requerido"),
+            phoneNumberManagingPartner: Yup.string()
               .min(11, "Formato inválido")
               .required("Campo requerido"),
-            cep: Yup.string().required("Campo requerido"),
-            cpf: Yup.string().required("Campo requerido"),
-            email: Yup.string().email().required("Campo requerido"),
+            companyCep: Yup.string().required("Campo requerido"),
+            cpfManagingPartner: Yup.string().required("Campo requerido"),
+            cnpj: Yup.string().required("Campo requerido"),
+            state: Yup.string().required("Campo requerido"),
+            city: Yup.string().required("Campo requerido"),
+            managingPartnerEmail: Yup.string().email().required("Campo requerido"),
             password: Yup.string()
               .required("Campo requerido")
               .min(6, "Senha deve ter no mínimo seis caracteres."),
@@ -151,6 +176,13 @@ export default function DreamerRegister() {
               handleBlur,
               handleSubmit,
             } = props;
+            const handleStateSelect = (selectedState) => {
+              <input id="state" value={selectedState}></input>//ToDO:is this correct?
+              return selectedState;
+            }
+            const handleCitySelect = (selectedCity) => {
+              <input id="state" value={selectedCity}></input>//ToDO:is this correct?
+            }
             return (
               <form onSubmit={handleSubmit}>
                 <div className="photo">
@@ -177,33 +209,46 @@ export default function DreamerRegister() {
                     </label>
                   </h2>
                 </div>
-                <label>Nome Completo</label>
+                <label>Razão Social</label>
                 <input
-                  id="name"
-                  placeholder="Nome Completo"
+                  id="razaosocial"
+                  placeholder="Razão Social"
                   type="text"
-                  value={values.name}
+                  value={values.razaosocial}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={errors.name && touched.name ? "error" : ""}
+                  className={errors.razaosocial && touched.razaosocial ? "error" : ""}
                 />
-                {errors.name && touched.name && (
-                  <div className="input-feedback">{errors.name}</div>
+                {errors.razaosocial && touched.razaosocial && (
+                  <div className="input-feedback">{errors.razaosocial}</div>
+                )}
+                <label>Nome Fantasia</label>
+                <input
+                  id="nomefantasia"
+                  placeholder="Nome Fantasia"
+                  type="text"
+                  value={values.nomefantasia}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.nomefantasia && touched.nomefantasia ? "error" : ""}
+                />
+                {errors.nomefantasia && touched.nomefantasia && (
+                  <div className="input-feedback">{errors.nomefantasia}</div>
                 )}
                 <label>Data de Nascimento</label>
                 <InputMask
                   mask="99/99/9999"
-                  id="birthdate"
+                  id="birthdatemanagingpartner"
                   placeholder="Data de Nascimento"
                   type="text"
-                  value={values.birthdate}
+                  value={values.birthdateManagingPartner}
                   onChange={handleChange}
                   onClick={() => {
                     setDateError("");
                   }}
                   onBlur={handleBlur}
                   className={
-                    errors.birthdate && touched.birthdate ? "error" : ""
+                    errors.birthdateManagingPartner && touched.birthdateManagingPartner ? "error" : ""
                   }
                 />
                 {dateError ? (
@@ -211,23 +256,23 @@ export default function DreamerRegister() {
                 ) : (
                   ""
                 )}
-                {errors.birthdate && touched.birthdate && (
-                  <div className="input-feedback">{errors.birthdate}</div>
+                {errors.birthdateManagingPartner && touched.birthdateManagingPartner && (
+                  <div className="input-feedback">{errors.birthdateManagingPartner}</div>
                 )}
                 <label>Número de Telefone</label>
                 <InputMask
                   mask="(99) 99999-9999"
-                  id="phoneNumber"
+                  id="phonenumbermanagingpartner"
                   placeholder="Número de Telefone"
                   type="text"
-                  value={values.phoneNumber}
+                  value={values.phoneNumberManagingPartner}
                   onChange={handleChange}
                   onClick={() => {
                     setPhoneError("");
                   }}
                   onBlur={handleBlur}
                   className={
-                    errors.phoneNumber && touched.phoneNumber ? "error" : ""
+                    errors.phoneNumberManagingPartner && touched.phoneNumberManagingPartner ? "error" : ""
                   }
                 />
                 {phoneError ? (
@@ -241,68 +286,96 @@ export default function DreamerRegister() {
                 <label>CEP</label>
                 <InputMask
                   mask="99999-999"
-                  id="cep"
+                  id="companycep"
                   placeholder="CEP"
                   type="text"
                   value={values.cep}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={errors.cep && touched.cep ? "error" : ""}
+                  className={errors.companyCep && touched.companyCep ? "error" : ""}
                 />
-                {cepError ? (
-                  <div className="input-feedback">{cepError}</div>
+                {companyCepError ? (
+                  <div className="input-feedback">{companyCepError}</div>
                 ) : (
                   ""
                 )}
-                {errors.cep && touched.cep && (
-                  <div className="input-feedback">{errors.cep}</div>
+                {errors.companyCep && touched.companyCep && (
+                  <div className="input-feedback">{errors.companyCep}</div>
                 )}
                 <label>CPF</label>
                 <InputMask
                   mask="999.999.999-99"
-                  id="cpf"
+                  id="cpfmanagingpartner"
                   placeholder="CPF"
                   type="text"
-                  value={values.cpf}
+                  value={values.cpfManagingPartner}
                   onChange={handleChange}
                   onClick={() => {
-                    setCpfError("");
+                    setcpfManagingPartnerError("");
                   }}
                   onBlur={handleBlur}
-                  className={errors.cpf && touched.cpf ? "error" : ""}
+                  className={errors.cpfManagingPartner && touched.cpfManagingPartner ? "error" : ""}
                 />
-                {cpfError ? (
-                  <div className="input-feedback">{cpfError}</div>
+                {cpfManagingPartnerError ? (
+                  <div className="input-feedback">{cpfManagingPartnerError}</div>
                 ) : (
                   ""
                 )}
                 {errors.cpf && touched.cpf && (
                   <div className="input-feedback">{errors.cpf}</div>
                 )}
+                <label>CNPJ</label>
+                <InputMask
+                  mask="99.999.999/9999-99"
+                  id="cnpj"
+                  placeholder="CNPJ"
+                  type="text"
+                  value={values.cnpj}
+                  onChange={handleChange}
+                  onClick={() => {
+                    setCnpjError("");
+                  }}
+                  onBlur={handleBlur}
+                  className={errors.cnpj && touched.cnpj ? "error" : ""}
+                />
+                {cnpjError ? (
+                  <div className="input-feedback">{cnpjError}</div>
+                ) : (
+                  ""
+                )}
+                {errors.cnpj && touched.cnpj && (
+                  <div className="input-feedback">{errors.cnpj}</div>
+                )}
+                <label>Estado</label>
+                <StatesDropdown options={shortenedStatesNamesList} onSelect={handleOptionSelect} />
+                <label>Cidade</label>
+                {selectedOption && (
+                  <CitiesDropdown options={getCities(selectedOption)} onSelect={handleCitySelect}/>
+                )}
                 <label>Email</label>
                 <input
-                  id="email"
+                  id="managingpartneremail"
                   placeholder="E-mail"
                   type="text"
                   value={values.email}
                   onChange={handleChange}
                   onClick={() => {
-                    setEmailError("");
+                    setManagingPartnerEmailError("");
                   }}
                   onBlur={handleBlur}
                   className={
-                    errors.email && touched.email
+                    errors.managingPartnerEmail && touched.managingPartnerEmail
                       ? "text-input error"
                       : "text-input"
                   }
                 />
-                {emailError ? (
-                  <div className="input-feedback">{emailError}</div>
+                {managingPartnerEmailError ? (
+                  <div className="input-feedback">{managingPartnerEmailError}</div>
                 ) : (
                   ""
                 )}
-                {errors.email && touched.email && (
-                  <div className="input-feedback">{errors.email}</div>
+                {errors.managingPartnerEmailError && touched.managingPartnerEmailError && (
+                  <div className="input-feedback">{errors.emamanagingPartnerEmailErroril}</div>
                 )}
 
                 <label>Senha</label>

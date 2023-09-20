@@ -1,7 +1,8 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./pages/home/home";
 import SupporterRegister from "./pages/supporter-register/supporter-register";
-import DreamerRegister from "./pages/dreamer-register/dreamer-register";
+import DreamerRegister from "./pages/cnpj-entrepreneur-register/cnpj-entrepreneur-register";
+import CnpjEntrepreneurRegister from "./pages/cnpj-entrepreneur-register/cnpj-entrepreneur-register";
 import ConfirmEmail from "./pages/confirm-email/confirm-email";
 import RegisterSuccess from "./pages/register-success/register-success";
 import Quiz from "./pages/quiz/quiz";
@@ -36,6 +37,10 @@ function App() {
               path={`${PUBLIC_URL}/registro-apoiador`}
               component={SupporterRegister}
             />
+            {/* <Route
+              path={`${PUBLIC_URL}/dreamer-get`}
+              component={DreamerGet}
+            /> */}
             <Route
               path={`${PUBLIC_URL}/conferir-email`}
               component={ConfirmEmail}
@@ -44,9 +49,17 @@ function App() {
               path={`${PUBLIC_URL}/cadastro-sucesso/:token`}
               component={RegisterSuccess}
             />
+            {/* <Route
+              path={`${PUBLIC_URL}/registro-sonhador`}
+              component={DreamerRegister}
+            /> */}
             <Route
               path={`${PUBLIC_URL}/registro-sonhador`}
               component={DreamerRegister}
+            />
+            <Route
+              path={`${PUBLIC_URL}/registro-empreendedor-cnpj`}
+              component={CnpjEntrepreneurRegister}
             />
             <Route path={`${PUBLIC_URL}/questionario`} component={Quiz} />
             <Route

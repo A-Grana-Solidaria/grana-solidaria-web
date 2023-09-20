@@ -26,7 +26,7 @@ export default function DreamsPage() {
   }, [paginaAtual]);
   return dreams ? (
     <div className="DreamsPage">
-      <Header h1="Sonhos" h2="página dos" arrow="false" menu="true" />
+      <Header h1="Projetos" h2="página dos" arrow="false" menu="true" />
 
       <div className="dreams-content">
         {dreams.map((dream) => {

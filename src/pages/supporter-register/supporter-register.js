@@ -18,6 +18,7 @@ import {
 import moment from "moment";
 import Modal from "react-modal";
 import Agreements from "../agreement/agreement";
+import {useEffect} from 'react';
 
 export default function SupporterRegister() {
   const history = useHistory();
@@ -29,6 +30,11 @@ export default function SupporterRegister() {
   const [emailError, setEmailError] = React.useState("");
   const [accept, setAccept] = React.useState(false);
   const [modalAgreementIsOpen, setModalAgreementIsOpen] = React.useState(false);
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const showAgreement = () => {
     setModalAgreementIsOpen(true);

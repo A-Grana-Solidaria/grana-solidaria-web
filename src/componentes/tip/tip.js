@@ -10,7 +10,7 @@ export default function Tip(props) {
       </div>
       <h2>Dica da grana solidária</h2>
       <span>
-        Nós recomendamos diluir os seus apoios em sonhos diferentes, assim,
+        Nós recomendamos diluir os seus apoios em empreendimentos diferentes, assim,
         todos saem com mais chances de bons resultados ;)
       </span>
     </div>

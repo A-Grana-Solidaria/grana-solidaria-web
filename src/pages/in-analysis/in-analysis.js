@@ -16,8 +16,7 @@ export default function InAnalysis() {
           <div>
             <img src={Clock} alt="imagem de um relógio" />
             <span>
-              Oba! Recebemos o seu sonho e entraremos em contato para te
-              conhecermos melhor
+              Oba! Seu cadastro foi realizado com sucesso, seu projeto está em análise <br></br> assim que for liberado enviaremos um e-mail te avisando!
             </span>
           </div>
         </div>

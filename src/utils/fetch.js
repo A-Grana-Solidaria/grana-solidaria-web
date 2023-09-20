@@ -12,7 +12,8 @@ export function fazerRequisicaoComBody(url, metodo, conteudo) {
 }
 
 let API = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_ENDPOINT,
+  // baseURL: process.env.REACT_APP_API_BASE_ENDPOINT,
+  baseURL: "http://localhost:3002/",
   headers: { Authorization: "Bearer " + localStorage.getItem("token") },
 });
 
@@ -21,7 +22,8 @@ export default {
     localStorage.setItem("token", token);
 
     API = axios.create({
-      baseURL: process.env.REACT_APP_API_BASE_ENDPOINT,
+      // baseURL: process.env.REACT_APP_API_BASE_ENDPOINT,
+      baseURL: "http://localhost:3002/",
       headers: { Authorization: "Bearer " + localStorage.getItem("token") },
     });
   },
@@ -37,6 +39,10 @@ export default {
   supporter: (formData) => API.post("supporter", formData),
 
   dreamer: (formData) => API.post("dreamer", formData),
+
+  entrepreneurCompany: (formData) => API.post("entrepreneurCompany", formData),
+
+  dreamerGet: () => API.get("dreamerGet"),
 
   registerDream: (
     question1_status,

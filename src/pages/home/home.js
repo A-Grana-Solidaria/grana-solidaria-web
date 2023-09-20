@@ -61,15 +61,6 @@ export default function Home() {
               history.push(`${process.env.PUBLIC_URL}/registro-apoiador`);
             }}>Quero investir com propósito</a>
 
-            <div className="drop">
-              <span>Saiba mais</span>
-              <img
-                src={DropDown}
-                className="drop"
-                alt="botão descer"
-                onClick={scroll}
-              />
-            </div>
           </div>
         </div>
       </header>

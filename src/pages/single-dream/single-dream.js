@@ -136,13 +136,13 @@ export default function SingleDream() {
 			}
             }}
           >
-            Apoiar este sonho
+            Apoiar este projeto
           </a>
         </div>
       </div>
 
       <div className="dream-data">
-        <h4>Sobre o sonho de {dadosSonhos.name}</h4>
+        <h4>Sobre o projeto de {dadosSonhos.name}</h4>
         <hr></hr>
         <div className="dream-description">
           <p>{dadosSonhos.description}</p>
@@ -164,7 +164,7 @@ export default function SingleDream() {
 			}
             }}
             >
-              Apoiar este sonho
+              Apoiar este projeto
             </a>
           </div>
         </div>
@@ -182,12 +182,12 @@ export default function SingleDream() {
           </WhatsappShareButton>
           <FacebookShareButton
             url="https://www.figma.com/file/pTUejjPRQLD3s16DLzPhgn/Grana-Solidaria-%2F%2F-Telas-Finais?node-id=1%3A2"
-            quote={`Apoie o sonho de ${dadosSonhos.name} || Descrição: ${dadosSonhos.description}`}
+            quote={`Apoie o projeto de ${dadosSonhos.name} || Descrição: ${dadosSonhos.description}`}
             hashtag="#GranaSolidaria"
           >
             <img src={Face} alt="facebook" />
           </FacebookShareButton>
-          <TwitterShareButton url={window.location.href} title={`Apoie o sonho de ${dadosSonhos.name}!!`} hashtags={['ApoieEsseSonho', 'GranaSolidaria']}>
+          <TwitterShareButton url={window.location.href} title={`Apoie o projeto de ${dadosSonhos.name}!!`} hashtags={['ApoieEsseSonho', 'GranaSolidaria']}>
             <img src={Twitter} alt="twitter" />
           </TwitterShareButton>
           <a target="_blank" rel="noreferrer" href="https://www.instagram.com/grana_solidaria/">
