@@ -141,7 +141,7 @@
 .Home .home-container h3 {
   text-transform: uppercase;
   font-size: 14px;
-  text-align: left;
+  text-align: center;
 
   font-size: 16px;
   line-height: 20px;
@@ -247,6 +247,7 @@
   flex-direction: column;
   height: 800px;
   justify-content: space-between;
+  width:100%;
 }
 
 .Home .supporter-container .text-container {
