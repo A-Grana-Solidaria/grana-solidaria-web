@@ -25,7 +25,8 @@ function App() {
     token: null,
   };
 
-  const PUBLIC_URL = process.env.PUBLIC_URL;
+  //const PUBLIC_URL = process.env.PUBLIC_URL;
+  const PUBLIC_URL = 'https://grana-solidaria-server-dev.azurewebsites.net';
 
   return (
     <BrowserRouter>
