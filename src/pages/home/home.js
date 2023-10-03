@@ -57,9 +57,9 @@ export default function Home() {
             <a onClick={() => {
               history.push(`${process.env.PUBLIC_URL}/registro-sonhador`);
             }}>Preciso de investimento</a>
-            <a onClick={() => {
+            {/* <a onClick={() => {
               history.push(`${process.env.PUBLIC_URL}/registro-apoiador`);
-            }}>Quero investir com propósito</a>
+            }}>Quero investir com propósito</a> */}
 
           </div>
         </div>
