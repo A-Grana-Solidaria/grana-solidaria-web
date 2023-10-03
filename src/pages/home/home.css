@@ -149,7 +149,7 @@
 }
 
 .Home .home-container p {
-  text-align: left;
+  text-align: center;
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0.3rem;
@@ -247,6 +247,7 @@
   flex-direction: column;
   height: 800px;
   justify-content: space-between;
+  width:100%;
 }
 
 .Home .supporter-container .text-container {
