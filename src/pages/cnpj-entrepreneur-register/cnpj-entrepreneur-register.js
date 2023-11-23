@@ -143,11 +143,9 @@ export default function CnpjEntrepreneurRegister() {
             razaosocial: Yup.string().required("Campo requerido"),
             nomefantasia: Yup.string().required("Campo requerido"),
             birthdateManagingPartner: Yup.string().required("Campo requerido"),
-            phoneNumberManagingPartner: Yup.string()
-              .min(11, "Formato inválido")
-              .required("Campo requerido"),
+            phoneNumberManagingPartner: Yup.string().required("Campo requerido"),
             companyCep: Yup.string().required("Campo requerido"),
-            cpfManagingPartner: Yup.string().required("Campo requerido"),
+            cpfManagingPartner: Yup.string(),
             cnpj: Yup.string().required("Campo requerido"),
             state: Yup.string().required("Campo requerido"),
             city: Yup.string().required("Campo requerido"),
@@ -260,6 +258,29 @@ export default function CnpjEntrepreneurRegister() {
                   <div className="input-feedback">{errors.birthdateManagingPartner}</div>
                 )}
                 <label>Número de Telefone</label>
+                <InputMask 
+                  mask="(99) 99999-9999"
+                  id="phonenumbermanagingpartner"
+                  placeholder="Número de Telefone"
+                  type="text"
+                  value={'a'}
+                  onChange={handleChange}
+                  onClick={() => {
+                    setPhoneError("");
+                  }}
+                  onBlur={handleBlur}
+                  className={
+                    errors.phoneNumberManagingPartner && touched.phoneNumberManagingPartner ? "error" : ""
+                  }
+                />
+                {phoneError ? (
+                  <div className="input-feedback">{phoneError}</div>
+                ) : (
+                  ""
+                )}
+                {errors.phoneNumber && touched.phoneNumber && (
+                  <div className="input-feedback">{errors.phoneNumber}</div>
+                )}
                 <InputMask
                   mask="(99) 99999-9999"
                   id="phonenumbermanagingpartner"
@@ -289,8 +310,11 @@ export default function CnpjEntrepreneurRegister() {
                   id="companycep"
                   placeholder="CEP"
                   type="text"
-                  value={values.cep}
+                  value={values.companyCep}
                   onChange={handleChange}
+                  onClick={() => {
+                    setCompanyCepError("");
+                  }}
                   onBlur={handleBlur}
                   className={errors.companyCep && touched.companyCep ? "error" : ""}
                 />

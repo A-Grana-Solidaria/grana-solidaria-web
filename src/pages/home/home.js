@@ -117,9 +117,9 @@ export default function Home() {
                   planeta através da geração de trabalho e renda e de ações que preservem o meio-ambiente.
                   </p>
 
-                  <button onClick={() =>{
+                  {/* <button onClick={() =>{
 					  history.push(`${process.env.PUBLIC_URL}/registro-apoiador`)
-				  }}>Quero investir com propósito</button>
+				  }}>Quero investir com propósito</button> */}
                 </div>
               </div>
             </div>
