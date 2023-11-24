@@ -8,7 +8,7 @@ import Whatsapp from "../../componentes/whatsapp/whatsapp";
 import WhatsappImg from "../../assets/wpp-white.png";
 import { useHistory } from "react-router-dom";
 import Modal from "react-modal";
-import BannerPhoto from "../../assets/home-banner-photo.png";
+import BannerPhoto from "../../assets/home-banner-photo2.png";
 import Footer from "../../componentes/footer/footer";
 
 export default function Home() {
