@@ -40,6 +40,8 @@ export default {
 
   dreamer: (formData) => API.post("dreamer", formData),
 
+  company: (formData) => API.post("company", formData),
+
   entrepreneurCompany: (formData) => API.post("entrepreneurCompany", formData),
 
   dreamerGet: () => API.get("dreamerGet"),
