@@ -55,7 +55,7 @@ export default function Home() {
           <div className="header-bot">
             <hr></hr>
             <a onClick={() => {
-              history.push(`${process.env.PUBLIC_URL}/registro-sonhador`);
+              history.push(`${process.env.PUBLIC_URL}/registro-empresa`);
             }}>Preciso de investimento</a>
             {/* <a onClick={() => {
               history.push(`${process.env.PUBLIC_URL}/registro-apoiador`);
@@ -91,10 +91,9 @@ export default function Home() {
                   <p>
                     Uma pessoa que busca uma solução que alie crédito e educação empreendedora
                     em negócios conectados a valores sociais e ambientais.
-                    {/* Necessáario correção e adição. */}
                   </p>
                   <button onClick={() =>{
-					  history.push(`${process.env.PUBLIC_URL}/registro-sonhador`)
+					  history.push(`${process.env.PUBLIC_URL}/registro-empresa`)
 				  }}>Preciso de investimento</button>
                 </div>
               </div>

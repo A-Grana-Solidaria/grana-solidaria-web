@@ -117,7 +117,7 @@ export default function Login() {
         <div className="submit" style={{display: "flex"}}>
           <button
             onClick={() => {
-              history.push(`${process.env.PUBLIC_URL}/registro-sonhador`);
+              history.push(`${process.env.PUBLIC_URL}/registro-empresa`);
             }}
           >
             Faça seu cadastro

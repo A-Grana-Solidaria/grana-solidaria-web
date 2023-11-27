@@ -19,6 +19,7 @@ import "./App.css";
 import TokenContext from "./componentes/token/token";
 import RecoverPassword from "./pages/recover-password/recover-password";
 import InsertPassword from "./pages/insert-password/insert-password";
+import CompanyAddressRegister from "./pages/company-address-register/company-address-register";
 
 function App() {
   const data = {
@@ -37,10 +38,6 @@ function App() {
               path={`${PUBLIC_URL}/registro-apoiador`}
               component={SupporterRegister}
             />
-            {/* <Route
-              path={`${PUBLIC_URL}/dreamer-get`}
-              component={DreamerGet}
-            /> */}
             <Route
               path={`${PUBLIC_URL}/conferir-email`}
               component={ConfirmEmail}
@@ -49,13 +46,13 @@ function App() {
               path={`${PUBLIC_URL}/cadastro-sucesso/:token`}
               component={RegisterSuccess}
             />
-            {/* <Route
-              path={`${PUBLIC_URL}/registro-sonhador`}
-              component={DreamerRegister}
-            /> */}
             <Route
-              path={`${PUBLIC_URL}/registro-sonhador`}
-              component={DreamerRegister}
+              path={`${PUBLIC_URL}/registro-empresa`}
+              component={CnpjEntrepreneurRegister}
+            />
+            <Route
+              path={`${PUBLIC_URL}/registro-endereco-empresa`}
+              component={CompanyAddressRegister}
             />
             <Route
               path={`${PUBLIC_URL}/registro-empreendedor-cnpj`}
@@ -84,11 +81,11 @@ function App() {
             />
             <Route path={`${PUBLIC_URL}/em-analise`} component={InAnalysis} />
             <Route path={`${PUBLIC_URL}/acordo`} component={Agreement} />
-			<Route
+			      <Route
               path={`${PUBLIC_URL}/termos-de-uso`}
               component={Terms}
             />
-				<Route
+				    <Route
               path={`${PUBLIC_URL}/politica-de-privacidade`}
               component={Politics}
             />

@@ -16,6 +16,7 @@ export default function CnpjEntrepreneurRegister() {
   }, [])
 
   const history = useHistory();
+  
 
   return (
     <div className="CnpjEntrepreneurRegister">
@@ -37,6 +38,8 @@ export default function CnpjEntrepreneurRegister() {
             tellphone: "",
             inscricaoestadual: "",
             openingdate: "",
+            password: "",
+            confirmpassword: ""
           }}
           onSubmit={async (formValues) => {
             let formData = new FormData();
@@ -50,11 +53,13 @@ export default function CnpjEntrepreneurRegister() {
               "openingdate",
               moment(formValues.openingdate, "DD/MM/YYYY").format("MM-DD-YYYY")
             );
+            formData.append("password", formValues.password);
+            formData.append("confirmpassword", formValues.confirmpassword);
             try{
-              const response = await API.company(formData);
-              const data = response.data;
-              API.updateAuthorization(data.dados.token);
-              history.push(`${process.env.PUBLIC_URL}/enderecoempresa`);
+              // const response = await API.company(formData);//ToDO: Não poderá haver a persistência antes de assinar os termos.
+              // const data = response.data;
+              // API.updateAuthorization(data.dados.token);
+              history.push(`${process.env.PUBLIC_URL}/registro-endereco-empresa`);
             } catch (error) {
 
             }
@@ -147,6 +152,31 @@ export default function CnpjEntrepreneurRegister() {
                       errors.openingdate && touched.openingdate ? "error" : ""
                     }
                   />
+                  
+                <label>Senha</label>
+                <input
+                  id="password"
+                  placeholder="Senha"
+                  type="password"
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.password && touched.password ? "error" : ""}
+                />
+                <label>Confirmar senha</label>
+                <input
+                  id="changepassword"
+                  placeholder="Senha"
+                  type="password"
+                  value={values.confirmpassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
+                    errors.confirmpassword && touched.confirmpassword
+                      ? "error"
+                      : ""
+                  }
+                />
                   <div class="alignButton">
                     <button type="submit" className="submit">
                       Continuar cadastro
