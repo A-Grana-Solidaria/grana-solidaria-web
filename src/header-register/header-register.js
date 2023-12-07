@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import API from "../../utils/fetch";
 import Login from "../../componentes/login/login";
 
-export default function Header(props) {
+export default function HeaderRegister(props) {
   const { h1 } = props;
   const { h2 } = props;
   const { menu } = props;
@@ -30,16 +30,14 @@ export default function Header(props) {
     <div className="Header">
       <header>
         <div className="header-content">
-          {(arrow !== "false") ? (
+          {((arrow !== "false") && (arrow !== "register")) ? (
             <img
               src={Arrow}
               className="arrow"
               alt="seta para retornar página"
               onClick={() => {
-                if (!API.getToken() && (arrow !== "register")) {
+                if (!API.getToken()) {
                   history.push(`${process.env.PUBLIC_URL}/`);
-                } else if(arrow === "register") {
-                  history.goBack();
                 } else {
                   history.goBack();
                 }

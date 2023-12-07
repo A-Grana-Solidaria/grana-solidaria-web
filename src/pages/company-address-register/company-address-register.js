@@ -32,7 +32,7 @@ export default function CompanyAddressRegister() {
 
   return (
     <div className="CompanyAddressRegister">
-      <Header h1="Grana Solidária" h2="Quero fazer parte da" arrow="true" menu="false" />
+      <Header h1="Grana Solidária" h2="Quero fazer parte da" arrow="register" menu="false" />
       <div className="register-content">
         <div className="intro">
           <h4>Obrigado pelo seu interesse na Grana Solidária.</h4>
@@ -63,7 +63,8 @@ export default function CompanyAddressRegister() {
             formData.append("estado", formValues.estado);
             formData.append("pais", formValues.pais);
             try{
-              const response = await API.company(formData);
+              console.log(formData);
+              const response = await API.company(formData);//ToDO: should I use formvalues?
               const data = response.data;
               API.updateAuthorization(data.dados.token);
               history.push(`${process.env.PUBLIC_URL}/conferir-email`);
@@ -192,7 +193,7 @@ export default function CompanyAddressRegister() {
                 </div>
                   <div class="alignButton">
                     <button type="submit" className="submit">
-                      Continuar cadastro
+                      Finalizar cadastro
                     </button>
                   </div>
                 </form>

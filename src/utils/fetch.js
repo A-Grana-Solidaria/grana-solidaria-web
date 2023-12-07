@@ -40,9 +40,14 @@ export default {
 
   dreamer: (formData) => API.post("dreamer", formData),
 
-  company: (formData) => API.post("company", formData),
+  company: (formData) => {
+    console.log("chegou aquiiii");
+    API.post("company", formData)
+  },
 
-  entrepreneurCompany: (formData) => API.post("entrepreneurCompany", formData),
+  saveCompanyDataOnCache : (formData) => {
+    localStorage.setItem("FormData", JSON.stringify(formData));
+  },
 
   dreamerGet: () => API.get("dreamerGet"),
 

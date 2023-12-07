@@ -56,12 +56,10 @@ export default function CnpjEntrepreneurRegister() {
             formData.append("password", formValues.password);
             formData.append("confirmpassword", formValues.confirmpassword);
             try{
-              // const response = await API.company(formData);//ToDO: Não poderá haver a persistência antes de assinar os termos.
-              // const data = response.data;
-              // API.updateAuthorization(data.dados.token);
+              const saveDataOnCache = await API.saveCompanyDataOnCache(formValues);//ToDO: Validate if its safe (formvalues and saving on cache)
               history.push(`${process.env.PUBLIC_URL}/registro-endereco-empresa`);
             } catch (error) {
-
+              alert(error.response.data.dados.mensagem);//ToDO: enquanto n tenho erros personalizados para cada campo
             }
           }}
           validationSchema={Yup.object().shape({
