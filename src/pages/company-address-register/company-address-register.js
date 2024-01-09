@@ -51,6 +51,8 @@ export default function CompanyAddressRegister() {
             cidade: "",
             estado: "",
             pais: "",
+            password: "",
+            confirmpassword: ""
           }}
           onSubmit={async (formValues) => {
             let formData = new FormData();
@@ -59,12 +61,15 @@ export default function CompanyAddressRegister() {
             formData.append("complemento", formValues.complemento);
             formData.append("numero", formValues.numero);
             formData.append("logradouro", formValues.logradouro);
-            formData.append("cidade", formValues.cidade);
-            formData.append("estado", formValues.estado);
-            formData.append("pais", formValues.pais);
+            formData.append("cidade", formValues.city);
+            formData.append("estado", formValues.state);
+            formData.append("pais", formValues.country);
+            formData.append("password", formValues.password);//ToDo: Pasword Security
+            formData.append("confirmpassword", formValues.confirmpassword);
+            formData.append("firstPageData", localStorage.getItem("FormData"))
             try{
-              console.log(formData);
-              const response = await API.company(formData);//ToDO: should I use formvalues?
+              console.log(JSON.stringify(formValues));
+              const response = await API.company(formValues);//ToDO: should I use formvalues?
               const data = response.data;
               API.updateAuthorization(data.dados.token);
               history.push(`${process.env.PUBLIC_URL}/conferir-email`);
@@ -171,6 +176,26 @@ export default function CompanyAddressRegister() {
                     onBlur={handleBlur}
                     className={errors.pais && touched.pais ? "error" : ""}
                   />
+                <label>Senha</label>
+                <input
+                  id="password"
+                  placeholder="Senha"
+                  type="password"
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.password && touched.password ? "error" : ""}
+                />
+                <label>Confirmar senha</label>
+                <input
+                  id="confirmpassword"
+                  placeholder="Confirmar Senha"
+                  type="password"
+                  value={values.confirmpassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.confirmpassword && touched.confirmpassword ? "error" : ""}
+                />
                   <div className="disclaimer">
                     <span className="agreement">
                       <Modal

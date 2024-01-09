@@ -36,10 +36,8 @@ export default function CnpjEntrepreneurRegister() {
             nomefantasia: "",
             cellphone: "",
             tellphone: "",
-            inscricaoestadual: "",
             openingdate: "",
-            password: "",
-            confirmpassword: ""
+            investimenttarget: "",
           }}
           onSubmit={async (formValues) => {
             let formData = new FormData();
@@ -48,13 +46,11 @@ export default function CnpjEntrepreneurRegister() {
             formData.append("nomefantasia", formValues.nomefantasia);
             formData.append("cellphone", formValues.cellphone);
             formData.append("tellphone", formValues.tellphone);
-            formData.append("inscricaoestadual", formValues.inscricaoestadual);
             formData.append(
               "openingdate",
               moment(formValues.openingdate, "DD/MM/YYYY").format("MM-DD-YYYY")
             );
-            formData.append("password", formValues.password);
-            formData.append("confirmpassword", formValues.confirmpassword);
+            formData.append("investimenttarget", formValues.investimenttarget);
             try{
               const saveDataOnCache = await API.saveCompanyDataOnCache(formValues);//ToDO: Validate if its safe (formvalues and saving on cache)
               history.push(`${process.env.PUBLIC_URL}/registro-endereco-empresa`);
@@ -78,6 +74,17 @@ export default function CnpjEntrepreneurRegister() {
             } = props;
               return (
                 <form onSubmit={handleSubmit}>
+                  <label>Quanto você precisa de investimento?</label>
+                  <input
+                    id="investimenttarget"
+                    placeholder="Investimento"
+                    type="text"
+                    value={values.investimenttarget}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={errors.investimenttarget && touched.investimenttarget ? "error" : ""}
+                    /*ToDO: Criar mascara para valor em dinheiro*/
+                  />
                   <label>CNPJ (apenas números)</label>
                   <InputMask
                     mask="99.999.999/9999-99"
@@ -150,31 +157,6 @@ export default function CnpjEntrepreneurRegister() {
                       errors.openingdate && touched.openingdate ? "error" : ""
                     }
                   />
-                  
-                <label>Senha</label>
-                <input
-                  id="password"
-                  placeholder="Senha"
-                  type="password"
-                  value={values.password}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={errors.password && touched.password ? "error" : ""}
-                />
-                <label>Confirmar senha</label>
-                <input
-                  id="changepassword"
-                  placeholder="Senha"
-                  type="password"
-                  value={values.confirmpassword}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    errors.confirmpassword && touched.confirmpassword
-                      ? "error"
-                      : ""
-                  }
-                />
                   <div class="alignButton">
                     <button type="submit" className="submit">
                       Continuar cadastro

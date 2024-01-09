@@ -13,7 +13,7 @@ export function fazerRequisicaoComBody(url, metodo, conteudo) {
 
 let API = axios.create({
   // baseURL: process.env.REACT_APP_API_BASE_ENDPOINT,
-  baseURL: "https://grana-solidaria-server-dev.azurewebsites.net/",
+  baseURL: "http://localhost:3002/",
   headers: { Authorization: "Bearer " + localStorage.getItem("token") },
 });
 
@@ -23,7 +23,7 @@ export default {
 
     API = axios.create({
       // baseURL: process.env.REACT_APP_API_BASE_ENDPOINT,
-      baseURL: "https://grana-solidaria-server-dev.azurewebsites.net/",
+      baseURL: "http://localhost:3002/",
       headers: { Authorization: "Bearer " + localStorage.getItem("token") },
     });
   },
@@ -42,6 +42,7 @@ export default {
 
   company: (formData) => {
     console.log("chegou aquiiii");
+    console.log(JSON.stringify(formData));
     API.post("company", formData)
   },
 
